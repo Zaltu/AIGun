@@ -1,0 +1,6 @@
+"""
+Define names to export to AIGIS
+"""
+from AIGun import aigun
+
+SKILLS = ["aigun"]

@@ -1,0 +1,6 @@
+# Ignore compiled python
+__pycache__/
+*.pyc
+
+# Ignore secret files
+*.secret
