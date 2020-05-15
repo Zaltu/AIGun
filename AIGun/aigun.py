@@ -1,8 +1,11 @@
+import os
 import json
 from shotgun_api3 import Shotgun
 
+SECRET_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../", "secrets", "sg_creds.secret"))
+
 # If it fails, we want it to crash. AIGIS will handle it.
-with open("sg_creds.secret", "r") as SECRET_FILE:
+with open(SECRET_PATH, "r") as SECRET_FILE:
     SECRETS = json.load(SECRET_FILE)
 
 SG = Shotgun(SECRETS["URL"], SECRETS["API_NAME"], SECRETS["API_KEY"])
