@@ -41,7 +41,7 @@ def fetch(fetch_request):
 
     for entity_type in fetch_request:
         try:
-            return_data[entity_type] = SG.find(entity_type, fetch_request[entity_type].get("filters"), fetch_request[entity_type].get("return_fields"))
+            return_data[entity_type] = SG.find(entity_type, fetch_request[entity_type].get("filters", []), fetch_request[entity_type].get("return_fields"))
         except:  # Broad-except for testing
             print("Error processing \n%s" % fetch_request[entity_type])
     
